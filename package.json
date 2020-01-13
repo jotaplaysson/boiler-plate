@@ -1,0 +1,31 @@
+{
+  "name": "boiler-plate",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/jotaplaysson/boiler-plate.git",
+  "author": "Joao Paulo Monteiro <jpmonteiro64@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon src/main.js",
+    "dev:debug": "nodemon --inspect src/main.js",
+    "lint": "npx eslint --fix src --ext .js && npx eslint src --ext .js src/",
+    "test": "npx mocha tests/**/*.spec.js",
+    "test:dev": "npx mocha tests/**/*.spec.js",
+    "prepush": "yarn lint && yarn test"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^4.0.7",
+    "mocha": "^7.0.0",
+    "nodemon": "^2.0.2",
+    "nyc": "^15.0.0",
+    "prettier": "^1.19.1",
+    "sucrase": "^3.12.0"
+  },
+  "dependencies": {}
+}
