@@ -1,7 +1,7 @@
 {
   "husky": {
     "hooks": {
-      "prepush": "yarn lint && yarn test"
+      "pre-push": "yarn lint && yarn test"
     }
   }
 }
