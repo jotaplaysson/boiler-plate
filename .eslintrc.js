@@ -2,6 +2,7 @@ module.exports = {
   env: {
     es6: true,
     node: true,
+    mocha: true,
   },
   extends: [
     'airbnb-base',
@@ -26,4 +27,12 @@ module.exports = {
     "camelcase": "off",
     "no-unused-vars": ["error", { "argsIgorePattern": "next" }]
   },
+  overrides: [
+    {
+        "files": ["*.test.js", "*.spec.js"],
+        "rules": {
+            "no-unused-expressions": "off"
+        }
+    }
+  ],
 };
