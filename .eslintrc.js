@@ -25,7 +25,8 @@ module.exports = {
     "class-methods-use-this": "off",
     "no-param-reassign": "off",
     "camelcase": "off",
-    "no-unused-vars": ["error", { "argsIgorePattern": "next" }]
+    "no-unused-vars": ["error", { "argsIgorePattern": "next" }],
+    "import/prefer-default-export": "off",
   },
   overrides: [
     {

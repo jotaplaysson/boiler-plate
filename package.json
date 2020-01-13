@@ -1,7 +1,7 @@
 {
   "name": "boiler-plate",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/index.js",
   "repository": "https://github.com/jotaplaysson/boiler-plate.git",
   "author": "Joao Paulo Monteiro <jpmonteiro64@gmail.com>",
   "license": "MIT",
@@ -10,7 +10,8 @@
     "dev:debug": "nodemon --inspect src/main.js",
     "lint": "npx eslint --fix src --ext .js && npx eslint src --ext .js src/",
     "test": "npx mocha test/**/*.spec.js --require babel-register",
-    "test:dev": "npx mocha test/**/*.spec.js --require babel-register --watch"
+    "test:dev": "npx mocha test/**/*.spec.js --require babel-register --watch",
+    "test:coverage": "nyc yarn test"
   },
   "nyc": {
     "reporter": [
@@ -33,7 +34,11 @@
     "nodemon": "^2.0.2",
     "nyc": "^15.0.0",
     "prettier": "^1.19.1",
+    "sinon": "^8.0.4",
+    "sinon-chai": "^3.4.0",
     "sucrase": "^3.12.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "node-fetch": "^2.6.0"
+  }
 }
