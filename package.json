@@ -10,8 +10,7 @@
     "dev:debug": "nodemon --inspect src/main.js",
     "lint": "npx eslint --fix src --ext .js && npx eslint src --ext .js src/",
     "test": "npx mocha tests/**/*.spec.js",
-    "test:dev": "npx mocha tests/**/*.spec.js",
-    "prepush": "yarn lint && yarn test"
+    "test:dev": "npx mocha tests/**/*.spec.js"
   },
   "devDependencies": {
     "chai": "^4.2.0",
