@@ -9,10 +9,19 @@
     "dev": "nodemon src/main.js",
     "dev:debug": "nodemon --inspect src/main.js",
     "lint": "npx eslint --fix src --ext .js && npx eslint src --ext .js src/",
-    "test": "npx mocha test/**/*.spec.js",
-    "test:dev": "npx mocha tests/**/*.spec.js"
+    "test": "npx mocha test/**/*.spec.js --require babel-register",
+    "test:dev": "npx mocha test/**/*.spec.js --require babel-register --watch"
+  },
+  "nyc": {
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "exclude": "test/**"
   },
   "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
     "chai": "^4.2.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
