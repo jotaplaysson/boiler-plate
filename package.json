@@ -6,37 +6,32 @@
   "author": "Joao Paulo Monteiro <jpmonteiro64@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "clean": "rimraf dist",
+    "build": "yarn clean && yarn webpack",
+    "build:dev": "yarn build -- --watch",
     "dev": "nodemon src/main.js",
     "dev:debug": "nodemon --inspect src/main.js",
     "lint": "npx eslint --fix src --ext .js && npx eslint src --ext .js src/",
-    "test": "npx mocha test/**/*.spec.js --require babel-register",
-    "test:dev": "npx mocha test/**/*.spec.js --require babel-register --watch",
-    "test:coverage": "nyc yarn test"
-  },
-  "nyc": {
-    "reporter": [
-      "text",
-      "html"
-    ],
-    "exclude": "test/**"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "devDependencies": {
-    "babel-preset-env": "^1.7.0",
-    "babel-register": "^6.26.0",
-    "chai": "^4.2.0",
+    "@sucrase/jest-plugin": "^2.0.0",
+    "@sucrase/webpack-loader": "^2.0.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-config-prettier": "^6.9.0",
     "eslint-plugin-import": "^2.19.1",
     "eslint-plugin-prettier": "^3.1.2",
     "husky": "^4.0.7",
-    "mocha": "^7.0.0",
+    "jest": "^24.9.0",
     "nodemon": "^2.0.2",
-    "nyc": "^15.0.0",
     "prettier": "^1.19.1",
-    "sinon": "^8.0.4",
-    "sinon-chai": "^3.4.0",
-    "sucrase": "^3.12.0"
+    "rimraf": "^3.0.0",
+    "sucrase": "^3.12.0",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
   },
   "dependencies": {
     "node-fetch": "^2.6.0"
